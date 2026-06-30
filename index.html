@@ -4,320 +4,285 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hyein Sung | Ph.D. Candidate</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    /* ===== RESET & BASE ===== */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap');
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --primary: #1d4ed8;
-      --primary-light: #3b82f6;
-      --primary-pale: #eff6ff;
-      --accent: #0ea5e9;
-      --dark: #0f172a;
-      --text: #334155;
-      --text-light: #64748b;
-      --border: #e2e8f0;
-      --bg: #f8fafc;
-      --white: #ffffff;
-      --card: #ffffff;
-      --radius: 12px;
-      --shadow: 0 1px 3px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.06);
-      --shadow-md: 0 4px 24px rgba(29,78,216,.10);
+      --orange:       #ea580c;
+      --orange-light: #f97316;
+      --orange-pale:  #fff7ed;
+      --orange-mid:   #fed7aa;
+      --orange-dark:  #c2410c;
+      --dark:   #1c1917;
+      --text:   #292524;
+      --muted:  #78716c;
+      --border: #d6d3d1;
+      --border-strong: #a8a29e;
+      --bg:     #fafaf9;
+      --white:  #ffffff;
+      --radius: 10px;
+      --shadow: 0 1px 4px rgba(0,0,0,.08), 0 4px 16px rgba(0,0,0,.06);
+      --shadow-orange: 0 4px 20px rgba(234,88,12,.15);
     }
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Aptos', 'Calibri', 'Noto Sans', 'Segoe UI', Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
       font-size: 15px;
     }
-    a { color: var(--primary); text-decoration: none; }
-    a:hover { color: var(--primary-light); text-decoration: underline; }
+    a { color: var(--orange); text-decoration: none; }
+    a:hover { text-decoration: underline; color: var(--orange-dark); }
     ul { list-style: none; }
+    .container { max-width: 940px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 56px 0 32px; }
 
-    /* ===== LAYOUT ===== */
-    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
-    section { padding: 64px 0 32px; }
-
-    /* ===== NAV ===== */
+    /* ── NAV ── */
     nav {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
+      background: var(--white);
+      border-bottom: 2px solid var(--orange);
     }
     nav .inner {
-      max-width: 900px; margin: 0 auto; padding: 0 24px;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 60px;
+      max-width: 940px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; height: 56px;
     }
-    nav .brand { font-weight: 700; color: var(--dark); font-size: 16px; letter-spacing: -.3px; }
-    nav .links { display: flex; gap: 28px; }
-    nav .links a { font-size: 13px; font-weight: 500; color: var(--text-light); transition: color .2s; }
-    nav .links a:hover, nav .links a.active { color: var(--primary); text-decoration: none; }
+    nav .brand { font-weight: 700; color: var(--dark); font-size: 15px; letter-spacing: -.2px; }
+    nav .brand span { color: var(--orange); }
+    nav .links { display: flex; gap: 22px; }
+    nav .links a { font-size: 13px; font-weight: 500; color: var(--muted); transition: color .15s; }
+    nav .links a:hover, nav .links a.active { color: var(--orange); text-decoration: none; }
     .admin-btn {
-      background: none; border: 1px solid var(--border); color: var(--text-light);
-      padding: 5px 12px; border-radius: 20px; font-size: 12px; cursor: pointer;
-      font-family: inherit; transition: all .2s;
+      background: none; border: 2px solid var(--border); color: var(--muted);
+      padding: 4px 12px; border-radius: 6px; font-size: 12px; cursor: pointer;
+      font-family: inherit; transition: all .15s;
     }
-    .admin-btn:hover { border-color: var(--primary); color: var(--primary); }
+    .admin-btn:hover { border-color: var(--orange); color: var(--orange); }
 
-    /* ===== HERO ===== */
+    /* ── HERO ── */
     #hero {
-      background: linear-gradient(135deg, #f0f7ff 0%, #e8f4ff 50%, #f0fdf4 100%);
-      padding: 80px 0 64px;
-      border-bottom: 1px solid var(--border);
+      background: var(--white);
+      border-bottom: 2px solid var(--border);
+      padding: 64px 0 52px;
     }
-    .hero-inner {
-      display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center;
-    }
+    .hero-inner { display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center; }
     .hero-badge {
-      display: inline-block;
-      background: var(--primary-pale); color: var(--primary);
-      font-size: 12px; font-weight: 600; letter-spacing: .5px;
-      padding: 4px 12px; border-radius: 20px; margin-bottom: 16px;
-      border: 1px solid #bfdbfe;
+      display: inline-block; background: var(--orange-pale); color: var(--orange-dark);
+      font-size: 12px; font-weight: 600; letter-spacing: .4px;
+      padding: 4px 14px; border-radius: 4px; margin-bottom: 16px;
+      border: 1.5px solid var(--orange-mid);
     }
-    .hero-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 46px; font-weight: 600;
-      color: var(--dark); line-height: 1.15; margin-bottom: 8px;
-    }
-    .hero-title { font-size: 17px; color: var(--primary); font-weight: 500; margin-bottom: 20px; }
-    .hero-org { font-size: 14px; color: var(--text-light); margin-bottom: 32px; line-height: 1.8; }
+    .hero-name { font-size: 46px; font-weight: 700; color: var(--dark); line-height: 1.1; margin-bottom: 6px; letter-spacing: -.5px; }
+    .hero-title { font-size: 16px; color: var(--orange); font-weight: 600; margin-bottom: 18px; }
+    .hero-org { font-size: 14px; color: var(--muted); margin-bottom: 28px; line-height: 1.9; }
     .hero-org strong { color: var(--text); }
-    .hero-contacts { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-contacts { display: flex; flex-wrap: wrap; gap: 8px; }
     .hero-contact-item {
       display: flex; align-items: center; gap: 6px;
-      font-size: 13px; color: var(--text-light);
-      background: var(--white); border: 1px solid var(--border);
-      padding: 6px 14px; border-radius: 20px;
+      font-size: 12.5px; color: var(--muted);
+      background: var(--bg); border: 1.5px solid var(--border);
+      padding: 5px 13px; border-radius: 6px;
     }
-    .hero-contact-item svg { flex-shrink: 0; }
-    .hero-contact-item a { color: var(--text-light); }
-    .hero-contact-item a:hover { color: var(--primary); text-decoration: none; }
+    .hero-contact-item a { color: var(--muted); }
+    .hero-contact-item a:hover { color: var(--orange); text-decoration: none; }
     .profile-photo-wrap {
-      width: 190px; height: 190px; flex-shrink: 0;
+      width: 178px; height: 178px; flex-shrink: 0;
       border-radius: 50%; overflow: hidden;
-      border: 4px solid var(--white);
-      box-shadow: var(--shadow-md);
-      background: linear-gradient(135deg, #dbeafe, #e0f2fe);
+      border: 3px solid var(--orange);
+      box-shadow: var(--shadow-orange);
+      background: var(--orange-pale);
       display: flex; align-items: center; justify-content: center;
     }
     .profile-photo-wrap img { width: 100%; height: 100%; object-fit: cover; }
-    .photo-placeholder {
-      text-align: center; color: var(--primary-light);
-    }
-    .photo-placeholder svg { margin-bottom: 6px; }
-    .photo-placeholder p { font-size: 11px; color: var(--text-light); line-height: 1.3; }
+    .photo-placeholder { text-align: center; color: var(--orange-light); }
+    .photo-placeholder p { font-size: 11px; color: var(--muted); line-height: 1.3; margin-top: 5px; }
 
-    /* ===== SECTION HEADING ===== */
-    .section-header { margin-bottom: 32px; }
-    .section-label {
-      font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
-      text-transform: uppercase; color: var(--primary); margin-bottom: 6px;
+    /* ── STATS BANNER ── */
+    #stats {
+      background: var(--orange);
+      border-bottom: 2px solid var(--orange-dark);
+      padding: 0;
     }
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px; color: var(--dark); font-weight: 600;
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+    .stat-item {
+      text-align: center; padding: 26px 12px;
+      border-right: 1.5px solid rgba(255,255,255,.25);
+      cursor: pointer; transition: background .15s;
     }
-    .divider { width: 40px; height: 3px; background: var(--primary); border-radius: 2px; margin-top: 10px; }
+    .stat-item:last-child { border-right: none; }
+    .stat-item:hover { background: var(--orange-dark); }
+    .stat-number { font-size: 50px; font-weight: 700; color: var(--white); line-height: 1; letter-spacing: -1px; }
+    .stat-label { font-size: 13px; color: rgba(255,255,255,.9); margin-top: 6px; font-weight: 600; }
+    .stat-sub { font-size: 11px; color: rgba(255,255,255,.65); margin-top: 3px; }
 
-    /* ===== CARDS ===== */
+    /* ── SECTION WRAPPER (alternating) ── */
+    .sec-white { background: var(--white); border-top: 2px solid var(--border); border-bottom: 2px solid var(--border); }
+    .sec-tinted { background: var(--orange-pale); border-top: 2px solid var(--orange-mid); border-bottom: 2px solid var(--orange-mid); }
+
+    /* ── SECTION HEADER ── */
+    .section-header { margin-bottom: 28px; }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; color: var(--orange); margin-bottom: 5px; }
+    .section-title { font-size: 26px; color: var(--dark); font-weight: 700; letter-spacing: -.3px; }
+    .divider { width: 36px; height: 3px; background: var(--orange); border-radius: 0; margin-top: 8px; }
+
+    /* ── CARDS ── */
     .card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 24px 28px;
-      box-shadow: var(--shadow); margin-bottom: 16px;
+      background: var(--white); border: 2px solid var(--border);
+      border-radius: var(--radius); padding: 22px 26px;
+      box-shadow: var(--shadow); margin-bottom: 14px;
     }
-    .card:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); transition: all .2s; }
+    .sec-tinted .card { border-color: var(--orange-mid); }
 
-    /* ===== ABOUT ===== */
-    #about .about-text { font-size: 15.5px; color: var(--text); line-height: 1.85; }
-    #about .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+    /* ── ABOUT ── */
+    .about-text { font-size: 15px; color: var(--text); line-height: 1.85; }
+    .keywords { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
     .kw-tag {
-      background: var(--primary-pale); color: var(--primary);
-      border: 1px solid #bfdbfe; font-size: 12px; font-weight: 500;
-      padding: 4px 12px; border-radius: 20px;
+      background: var(--orange-pale); color: var(--orange-dark);
+      border: 1.5px solid var(--orange-mid); font-size: 12px; font-weight: 600;
+      padding: 3px 12px; border-radius: 4px;
     }
 
-    /* ===== EDUCATION ===== */
+    /* ── RESEARCH FLOW ── */
+    .flow-row { display: flex; align-items: center; gap: 0; margin-bottom: 14px; }
+    .flow-node {
+      flex: 1; background: var(--white); border: 2px solid var(--border);
+      border-radius: var(--radius); padding: 18px 14px; text-align: center;
+      cursor: pointer; transition: all .2s; box-shadow: var(--shadow);
+    }
+    .flow-node:hover { border-color: var(--orange); transform: translateY(-2px); box-shadow: var(--shadow-orange); }
+    .flow-node.active { border-color: var(--orange); border-width: 2.5px; background: var(--orange-pale); box-shadow: var(--shadow-orange); }
+    .flow-node-icon { font-size: 26px; margin-bottom: 6px; }
+    .flow-node-title { font-weight: 700; color: var(--dark); font-size: 13.5px; line-height: 1.3; }
+    .flow-node-sub { font-size: 11px; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+    .flow-arrow { padding: 0 10px; color: var(--orange); font-size: 22px; flex-shrink: 0; font-weight: 700; }
+    .flow-detail {
+      display: none; background: var(--white); border: 2px solid var(--orange);
+      border-radius: var(--radius); padding: 20px 22px; margin-top: 2px;
+      animation: fadeIn .18s ease;
+    }
+    .flow-detail.show { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+    .flow-detail h4 { font-size: 13px; font-weight: 700; color: var(--orange-dark); margin-bottom: 14px; text-transform: uppercase; letter-spacing: .5px; }
+    .flow-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .flow-detail-block {
+      background: var(--orange-pale); border-radius: 8px; padding: 14px 15px;
+      border: 1.5px solid var(--orange-mid);
+    }
+    .flow-detail-block h5 { font-size: 12.5px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .flow-detail-block ul li { font-size: 12.5px; color: var(--text); padding: 2px 0 2px 13px; position: relative; line-height: 1.5; }
+    .flow-detail-block ul li::before { content: "▸"; position: absolute; left: 0; color: var(--orange); font-size: 10px; top: 4px; }
+    .flow-detail-block .tag {
+      display: inline-block; background: var(--orange); color: var(--white);
+      font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 4px; margin-top: 7px;
+    }
+    .flow-sidebar { width: 138px; flex-shrink: 0; margin-left: 18px; display: flex; flex-direction: column; gap: 8px; }
+    .sidebar-label { font-size: 10.5px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .8px; margin-bottom: 2px; text-align: center; }
+    .ctrl-badge {
+      border-radius: 8px; padding: 12px 8px; text-align: center;
+      font-size: 12px; font-weight: 700; border: 2px solid;
+      cursor: pointer; transition: all .15s; line-height: 1.3;
+    }
+    .ctrl-badge.rule   { background: var(--white); color: #92400e; border-color: var(--orange-mid); }
+    .ctrl-badge.optimal{ background: var(--orange-pale); color: var(--orange-dark); border-color: var(--orange); }
+    .ctrl-badge.ai     { background: var(--white); color: #065f46; border-color: #6ee7b7; }
+    .ctrl-badge:hover  { transform: translateY(-2px); box-shadow: var(--shadow); }
+
+    /* ── EDUCATION / EXPERIENCE ── */
     .edu-item { display: grid; grid-template-columns: 1fr auto; gap: 12px; }
-    .edu-item + .edu-item { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); }
-    .edu-degree { font-weight: 600; color: var(--dark); font-size: 15px; }
-    .edu-school { color: var(--text); font-size: 14px; margin: 2px 0; }
-    .edu-period { font-size: 13px; color: var(--text-light); white-space: nowrap; }
-    .edu-gpa {
-      display: inline-block; background: #f0fdf4; color: #16a34a;
-      border: 1px solid #bbf7d0; font-size: 12px; font-weight: 600;
-      padding: 2px 10px; border-radius: 20px; margin-top: 4px;
-    }
-
-    /* ===== EXPERIENCE ===== */
+    .edu-item + .edu-item { margin-top: 18px; padding-top: 18px; border-top: 1.5px solid var(--border); }
+    .edu-degree { font-weight: 700; color: var(--dark); font-size: 14.5px; }
+    .edu-school { color: var(--text); font-size: 13.5px; margin: 2px 0; }
+    .edu-period { font-size: 12.5px; color: var(--muted); white-space: nowrap; }
+    .edu-gpa { display: inline-block; background: var(--orange-pale); color: var(--orange-dark); border: 1.5px solid var(--orange-mid); font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 4px; margin-top: 5px; }
     .exp-item { display: grid; grid-template-columns: 1fr auto; gap: 12px; }
-    .exp-title { font-weight: 600; color: var(--dark); font-size: 15px; }
-    .exp-org { color: var(--primary); font-size: 14px; font-weight: 500; margin: 2px 0; }
-    .exp-period { font-size: 13px; color: var(--text-light); white-space: nowrap; }
-    .exp-desc { font-size: 14px; color: var(--text-light); margin-top: 4px; }
+    .exp-title { font-weight: 700; color: var(--dark); font-size: 14.5px; }
+    .exp-org { color: var(--orange); font-size: 13.5px; font-weight: 600; margin: 2px 0; }
+    .exp-period { font-size: 12.5px; color: var(--muted); white-space: nowrap; }
+    .exp-desc { font-size: 13.5px; color: var(--muted); margin-top: 4px; }
 
-    /* ===== RESEARCH INTERESTS ===== */
-    .interest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .interest-card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 20px 22px;
-      box-shadow: var(--shadow);
-    }
-    .interest-card:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); transition: all .2s; }
-    .interest-icon { font-size: 28px; margin-bottom: 10px; }
-    .interest-title { font-weight: 600; color: var(--dark); font-size: 14px; margin-bottom: 8px; }
-    .interest-list li { font-size: 13px; color: var(--text-light); padding: 2px 0; padding-left: 12px; position: relative; }
-    .interest-list li::before { content: "·"; position: absolute; left: 0; color: var(--primary); }
-
-    /* ===== PROJECTS ===== */
-    .project-item {
-      border-left: 3px solid var(--primary-light);
-      padding-left: 16px; margin-bottom: 20px;
-    }
+    /* ── PROJECTS ── */
+    .project-item { border-left: 3px solid var(--orange); padding-left: 14px; margin-bottom: 18px; }
     .project-item:last-child { margin-bottom: 0; }
-    .project-title { font-weight: 600; color: var(--dark); font-size: 14px; line-height: 1.5; }
-    .project-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; align-items: center; }
-    .project-funder {
-      font-size: 12px; color: var(--text-light);
-      background: var(--bg); border: 1px solid var(--border);
-      padding: 2px 10px; border-radius: 20px;
-    }
-    .project-period { font-size: 12px; color: var(--text-light); }
-    .badge-ongoing {
-      font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px;
-      background: #fef3c7; color: #d97706; border: 1px solid #fde68a;
-    }
-    .badge-done {
-      font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px;
-      background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0;
-    }
+    .project-title { font-weight: 600; color: var(--dark); font-size: 13.5px; line-height: 1.5; }
+    .project-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 5px; align-items: center; }
+    .project-funder { font-size: 11.5px; color: var(--muted); background: var(--bg); border: 1.5px solid var(--border); padding: 2px 9px; border-radius: 4px; }
+    .project-period { font-size: 11.5px; color: var(--muted); }
+    .badge-ongoing { font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 4px; background: var(--orange); color: var(--white); }
+    .badge-done    { font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 4px; background: var(--bg); color: var(--muted); border: 1.5px solid var(--border); }
 
-    /* ===== PUBLICATIONS ===== */
-    .pub-group-title {
-      font-size: 13px; font-weight: 700; color: var(--text-light);
-      text-transform: uppercase; letter-spacing: .8px;
-      margin: 24px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border);
-    }
-    .pub-item { padding: 12px 0; border-bottom: 1px solid var(--border); }
+    /* ── PUBLICATIONS ── */
+    .pub-group-title { font-size: 11.5px; font-weight: 700; color: var(--orange-dark); text-transform: uppercase; letter-spacing: .8px; margin: 22px 0 10px; padding-bottom: 6px; border-bottom: 2px solid var(--orange-mid); }
+    .pub-item { padding: 10px 0; border-bottom: 1.5px solid var(--border); }
     .pub-item:last-child { border-bottom: none; }
     .pub-authors { font-size: 13.5px; color: var(--text); line-height: 1.6; }
     .pub-authors strong { color: var(--dark); }
-    .pub-venue { font-size: 12px; color: var(--primary); margin-top: 4px; font-style: italic; }
-    .pub-badge {
-      display: inline-block; font-size: 11px; font-weight: 600;
-      padding: 1px 8px; border-radius: 10px; margin-left: 6px; vertical-align: middle;
-    }
-    .pub-badge.submitted { background: #fef3c7; color: #d97706; border: 1px solid #fde68a; }
-    .pub-badge.first { background: var(--primary-pale); color: var(--primary); border: 1px solid #bfdbfe; }
+    .pub-venue { font-size: 12px; color: var(--orange); margin-top: 3px; font-style: italic; font-weight: 500; }
+    .pub-badge { display: inline-block; font-size: 10.5px; font-weight: 700; padding: 1px 8px; border-radius: 4px; margin-left: 6px; vertical-align: middle; }
+    .pub-badge.submitted { background: var(--orange-pale); color: var(--orange-dark); border: 1.5px solid var(--orange-mid); }
 
-    /* ===== SKILLS ===== */
-    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    /* ── SKILLS ── */
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; }
     .skill-card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 20px;
-      box-shadow: var(--shadow); text-align: center;
+      background: var(--white); border: 2px solid var(--border);
+      border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow);
+      text-align: center; transition: all .15s;
     }
-    .skill-card:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); transition: all .2s; }
-    .skill-icon { font-size: 32px; margin-bottom: 8px; }
-    .skill-name { font-weight: 600; color: var(--dark); font-size: 14px; margin-bottom: 6px; }
-    .skill-desc { font-size: 12px; color: var(--text-light); line-height: 1.5; }
+    .skill-card:hover { border-color: var(--orange); transform: translateY(-2px); box-shadow: var(--shadow-orange); }
+    .skill-icon { font-size: 28px; margin-bottom: 7px; }
+    .skill-name { font-weight: 700; color: var(--dark); font-size: 13.5px; margin-bottom: 5px; }
+    .skill-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
 
-    /* ===== CONTACT ===== */
-    #contact { background: var(--dark); color: var(--white); padding: 64px 0; }
-    #contact .section-label { color: #60a5fa; }
+    /* ── CONTACT ── */
+    #contact { background: var(--dark); color: var(--white); padding: 56px 0; border-top: 3px solid var(--orange); }
+    #contact .section-label { color: var(--orange-light); }
     #contact .section-title { color: var(--white); }
-    #contact .divider { background: #3b82f6; }
-    #contact .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 32px; }
-    .contact-item { display: flex; align-items: flex-start; gap: 14px; }
-    .contact-icon {
-      width: 40px; height: 40px; border-radius: 10px;
-      background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; color: #60a5fa;
-    }
-    .contact-label { font-size: 12px; color: #94a3b8; font-weight: 500; margin-bottom: 2px; }
-    .contact-value { font-size: 14px; color: var(--white); }
-    .contact-value a { color: #93c5fd; }
+    #contact .divider { background: var(--orange); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 28px; }
+    .contact-item { display: flex; align-items: flex-start; gap: 12px; }
+    .contact-icon { width: 38px; height: 38px; border-radius: 8px; background: rgba(234,88,12,.2); border: 1.5px solid rgba(234,88,12,.4); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--orange-light); }
+    .contact-label { font-size: 11.5px; color: #a8a29e; font-weight: 600; margin-bottom: 2px; }
+    .contact-value { font-size: 13.5px; color: var(--white); }
+    .contact-value a { color: var(--orange-light); }
     .contact-value a:hover { color: var(--white); }
 
-    /* ===== FOOTER ===== */
-    footer { text-align: center; padding: 24px; font-size: 12px; color: var(--text-light); border-top: 1px solid var(--border); }
+    /* ── FOOTER ── */
+    footer { text-align: center; padding: 20px; font-size: 12px; color: var(--muted); background: var(--bg); border-top: 2px solid var(--border); }
 
-    /* ===== ADMIN PANEL ===== */
-    #admin-overlay {
-      display: none; position: fixed; inset: 0;
-      background: rgba(15,23,42,.7); z-index: 1000;
-      align-items: center; justify-content: center;
-    }
+    /* ── ADMIN ── */
+    #admin-overlay { display: none; position: fixed; inset: 0; background: rgba(28,25,23,.75); z-index: 1000; align-items: center; justify-content: center; }
     #admin-overlay.show { display: flex; }
-    .admin-panel {
-      background: var(--white); border-radius: 16px;
-      width: 420px; max-width: 95vw;
-      padding: 36px 32px; box-shadow: 0 20px 60px rgba(0,0,0,.25);
-    }
-    .admin-panel h2 { font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
-    .admin-panel p { font-size: 13px; color: var(--text-light); margin-bottom: 24px; }
-    .admin-input {
-      width: 100%; border: 1px solid var(--border); border-radius: 8px;
-      padding: 10px 14px; font-size: 14px; font-family: inherit;
-      outline: none; transition: border .2s; margin-bottom: 12px;
-    }
-    .admin-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(29,78,216,.08); }
-    .btn-primary {
-      width: 100%; background: var(--primary); color: var(--white);
-      border: none; border-radius: 8px; padding: 11px;
-      font-size: 14px; font-weight: 600; cursor: pointer; font-family: inherit;
-      transition: background .2s; margin-bottom: 8px;
-    }
-    .btn-primary:hover { background: #1e40af; }
-    .btn-cancel {
-      width: 100%; background: none; color: var(--text-light);
-      border: 1px solid var(--border); border-radius: 8px; padding: 10px;
-      font-size: 13px; cursor: pointer; font-family: inherit;
-    }
-    .btn-cancel:hover { background: var(--bg); }
-    #admin-error { font-size: 12px; color: #ef4444; margin-bottom: 8px; display: none; }
-
-    /* Edit mode indicator */
-    #edit-indicator {
-      display: none; position: fixed; bottom: 20px; right: 20px; z-index: 200;
-      background: var(--primary); color: var(--white);
-      padding: 10px 18px; border-radius: 30px;
-      font-size: 13px; font-weight: 600; box-shadow: var(--shadow-md);
-      align-items: center; gap: 8px;
-    }
+    .admin-panel { background: var(--white); border-radius: 12px; width: 400px; max-width: 95vw; padding: 32px; box-shadow: 0 20px 60px rgba(0,0,0,.3); border-top: 4px solid var(--orange); }
+    .admin-panel h2 { font-size: 19px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+    .admin-panel p { font-size: 13px; color: var(--muted); margin-bottom: 22px; }
+    .admin-input { width: 100%; border: 2px solid var(--border); border-radius: 7px; padding: 10px 14px; font-size: 14px; font-family: inherit; outline: none; transition: border .15s; margin-bottom: 10px; }
+    .admin-input:focus { border-color: var(--orange); }
+    .btn-primary { width: 100%; background: var(--orange); color: var(--white); border: none; border-radius: 7px; padding: 11px; font-size: 14px; font-weight: 700; cursor: pointer; font-family: inherit; margin-bottom: 8px; transition: background .15s; }
+    .btn-primary:hover { background: var(--orange-dark); }
+    .btn-cancel { width: 100%; background: none; color: var(--muted); border: 2px solid var(--border); border-radius: 7px; padding: 10px; font-size: 13px; cursor: pointer; font-family: inherit; }
+    #admin-error { font-size: 12px; color: #dc2626; margin-bottom: 8px; display: none; }
+    #edit-indicator { display: none; position: fixed; bottom: 20px; right: 20px; z-index: 200; background: var(--orange); color: var(--white); padding: 10px 18px; border-radius: 8px; font-size: 13px; font-weight: 700; box-shadow: var(--shadow-orange); align-items: center; gap: 8px; }
     #edit-indicator.show { display: flex; }
-    #edit-indicator .logout-link {
-      font-size: 11px; color: rgba(255,255,255,.7); cursor: pointer; margin-left: 4px;
-    }
-    #edit-indicator .logout-link:hover { color: var(--white); }
+    #edit-indicator .logout-link { font-size: 11px; color: rgba(255,255,255,.75); cursor: pointer; margin-left: 6px; }
+    .editable { outline: none; border-radius: 3px; transition: background .15s; }
+    body.edit-mode .editable:hover { background: rgba(234,88,12,.07); cursor: text; }
+    body.edit-mode .editable:focus { background: rgba(234,88,12,.07); outline: 2px solid var(--orange); }
 
-    /* Editable elements */
-    .editable {
-      outline: none; border-radius: 4px;
-      transition: background .2s;
-    }
-    body.edit-mode .editable:hover {
-      background: rgba(29,78,216,.06);
-      cursor: text;
-    }
-    body.edit-mode .editable:focus {
-      background: rgba(29,78,216,.06);
-      outline: 2px solid var(--primary);
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 700px) {
+    /* ── RESPONSIVE ── */
+    @media (max-width: 720px) {
       .hero-inner { grid-template-columns: 1fr; }
-      .profile-photo-wrap { width: 130px; height: 130px; }
-      .hero-name { font-size: 34px; }
-      .interest-grid { grid-template-columns: 1fr; }
+      .profile-photo-wrap { width: 120px; height: 120px; }
+      .hero-name { font-size: 32px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2) { border-right: none; }
+      .flow-row { flex-direction: column; gap: 8px; }
+      .flow-arrow { transform: rotate(90deg); padding: 4px 0; }
+      .flow-sidebar { width: 100%; flex-direction: row; margin-left: 0; margin-top: 12px; }
+      .flow-detail-grid { grid-template-columns: 1fr; }
       .skills-grid { grid-template-columns: 1fr 1fr; }
-      #contact .contact-grid { grid-template-columns: 1fr; }
-      nav .links { gap: 16px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      nav .links { gap: 14px; }
     }
   </style>
 </head>
@@ -326,11 +291,11 @@
 <!-- NAV -->
 <nav>
   <div class="inner">
-    <span class="brand">Hyein Sung</span>
+    <span class="brand">Hyein <span>Sung</span></span>
     <div class="links">
       <a href="#about">About</a>
+      <a href="#research-overview">Research</a>
       <a href="#education">Education</a>
-      <a href="#research">Research</a>
       <a href="#projects">Projects</a>
       <a href="#publications">Publications</a>
       <a href="#contact">Contact</a>
@@ -344,31 +309,31 @@
   <div class="container">
     <div class="hero-inner">
       <div>
-        <div class="hero-badge">Ph.D. Candidate · Vehicle Systems & AI</div>
+        <div class="hero-badge">Ph.D. Candidate · Vehicle Systems &amp; AI Control</div>
         <h1 class="hero-name editable" contenteditable="false">Hyein Sung</h1>
         <div class="hero-title editable" contenteditable="false">Ph.D. Candidate, Mechanical Engineering</div>
         <div class="hero-org">
-          <strong>Hanyang University</strong> · MDL Lab<br/>
+          <strong>Hanyang University</strong> · MDL Lab (Advisor: Prof. Namwook Kim)<br/>
           Research Aide @ <strong>Argonne National Laboratory</strong>
         </div>
         <div class="hero-contacts">
           <div class="hero-contact-item">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
             <a href="mailto:hisung318@gmail.com">hisung318@gmail.com</a>
           </div>
           <div class="hero-contact-item">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
             <a href="https://sites.google.com/view/mdlhyu" target="_blank">Google Scholar Site</a>
           </div>
           <div class="hero-contact-item">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.08 3.41 2 2 0 0 1 3.06 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16v.92z"/></svg>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.08 3.41 2 2 0 0 1 3.06 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16v.92z"/></svg>
             <span>+82-10-9152-5329</span>
           </div>
         </div>
       </div>
       <div class="profile-photo-wrap" id="photo-wrap">
         <div class="photo-placeholder">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           <p>Photo<br/>coming soon</p>
         </div>
       </div>
@@ -376,8 +341,36 @@
   </div>
 </section>
 
+<!-- STATS BANNER -->
+<section id="stats">
+  <div class="container" style="padding:0">
+    <div class="stats-grid">
+      <div class="stat-item" onclick="scrollTo('#publications')" title="Go to Publications">
+        <div class="stat-number">1</div>
+        <div class="stat-label">Journal Paper</div>
+        <div class="stat-sub">IEEE TTE · Submitted</div>
+      </div>
+      <div class="stat-item" onclick="scrollTo('#publications')" title="Go to Publications">
+        <div class="stat-number">4</div>
+        <div class="stat-label">International Conferences</div>
+        <div class="stat-sub">Fisita · APAC · VPPC</div>
+      </div>
+      <div class="stat-item" onclick="scrollTo('#publications')" title="Go to Publications">
+        <div class="stat-number">5</div>
+        <div class="stat-label">Domestic Conferences</div>
+        <div class="stat-sub">KSAE · 1st Author</div>
+      </div>
+      <div class="stat-item" onclick="scrollTo('#projects')" title="Go to Projects">
+        <div class="stat-number">8</div>
+        <div class="stat-label">Research Projects</div>
+        <div class="stat-sub">Hyundai · NHTSA · MOTIE</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ABOUT -->
-<section id="about">
+<section id="about" class="sec-white">
   <div class="container">
     <div class="section-header">
       <div class="section-label">About</div>
@@ -385,33 +378,196 @@
       <div class="divider"></div>
     </div>
     <div class="card">
-      <p class="about-text editable" contenteditable="false" id="about-text">
-        I am a Ph.D. candidate in Mechanical Engineering at Hanyang University, South Korea,
-        specializing in <strong>vehicle energy management strategy (EMS) optimization</strong> and
-        <strong>intelligent control</strong> for advanced powertrain systems.
-        My research bridges classical optimal control theory — Dynamic Programming (DP) and
-        Pontryagin's Minimum Principle (PMP) — with modern machine learning and reinforcement
-        learning approaches.
+      <p class="about-text editable" contenteditable="false">
+        I am a Ph.D. candidate in Mechanical Engineering at Hanyang University, specializing in
+        <strong>vehicle energy management strategy (EMS) optimization</strong> for advanced electrified powertrains.
+        My research bridges classical optimal control — Dynamic Programming (DP) and Pontryagin's Minimum Principle (PMP/ECMS) —
+        with modern machine learning and reinforcement learning approaches.
         <br/><br/>
-        Currently, I am also serving as a Research Aide at <strong>Argonne National Laboratory</strong>,
-        contributing to NHTSA-funded vehicle technology assessment and model development projects.
-        I am passionate about accelerating the electrification of transportation through rigorous
-        mathematical modeling, simulation, and data-driven control strategies.
+        Currently based at <strong>Argonne National Laboratory</strong> as a Research Aide, I contribute to
+        NHTSA-funded vehicle technology assessment. My work spans the full development pipeline:
+        reverse-engineering real-world test data, building physics-based powertrain models, deriving
+        optimal control strategies, and validating against standardized drive cycles.
       </p>
       <div class="keywords">
         <span class="kw-tag">Energy Management Strategy</span>
-        <span class="kw-tag">Optimal Control</span>
-        <span class="kw-tag">HEV / PHEV / BEV / FCEV</span>
+        <span class="kw-tag">Optimal Control (DP · PMP · ECMS)</span>
+        <span class="kw-tag">HEV / PHEV / BEV / FCEV / EREV</span>
+        <span class="kw-tag">Reverse Engineering</span>
         <span class="kw-tag">Reinforcement Learning</span>
-        <span class="kw-tag">MATLAB / Simulink</span>
-        <span class="kw-tag">Vehicle Electrification</span>
+        <span class="kw-tag">MATLAB / Simulink / Autonomie</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EDUCATION -->
-<section id="education">
+<!-- RESEARCH OVERVIEW -->
+<section id="research-overview" class="sec-tinted">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Research Overview</div>
+      <h2 class="section-title">Research Topics at a Glance</h2>
+      <div class="divider"></div>
+      <p style="font-size:13px;color:var(--muted);margin-top:10px;">Click each block to explore details ↓</p>
+    </div>
+
+    <div style="display:flex;align-items:flex-start;gap:18px;">
+      <div style="flex:1;">
+        <div class="flow-row">
+          <div class="flow-node" id="node-modeling" onclick="toggleFlow('modeling')">
+            <div class="flow-node-icon">🔩</div>
+            <div class="flow-node-title">Vehicle System<br>Modeling</div>
+            <div class="flow-node-sub">Reverse Eng. · Powertrain Architecture</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node" id="node-control" onclick="toggleFlow('control')">
+            <div class="flow-node-icon">🎯</div>
+            <div class="flow-node-title">Control Strategy<br>Development</div>
+            <div class="flow-node-sub">ECMS · PMP · Hamiltonian</div>
+          </div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node" id="node-perf" onclick="toggleFlow('perf')">
+            <div class="flow-node-icon">📊</div>
+            <div class="flow-node-title">Performance<br>Analysis</div>
+            <div class="flow-node-sub">Fuel Economy · Driving Range · Validation</div>
+          </div>
+        </div>
+
+        <!-- DETAIL: Modeling -->
+        <div class="flow-detail" id="detail-modeling">
+          <h4>🔩 Vehicle System Modeling</h4>
+          <div class="flow-detail-grid">
+            <div class="flow-detail-block">
+              <h5>Reverse Engineering</h5>
+              <ul>
+                <li>Control strategy extraction from real-world test data</li>
+                <li>Component parameter estimation (efficiency map, inertia)</li>
+                <li>Drive cycle–based model validation (NCCP framework)</li>
+              </ul>
+              <span class="tag">Tenergy · Argonne (CRV, Grand Cherokee)</span>
+            </div>
+            <div class="flow-detail-block">
+              <h5>Multi-Architecture Powertrain Models</h5>
+              <ul>
+                <li>Power-split HEV — Prius Prime</li>
+                <li>Multi-mode parallel-series HEV — Honda CRV</li>
+                <li>Parallel HEV — IONIQ</li>
+                <li>Series HEV / EREV — BMW i4 · Hyundai EREV</li>
+                <li>eAWD dual-motor system (TMED2)</li>
+              </ul>
+              <span class="tag">Hyundai Motor · MOTIE · Tenergy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DETAIL: Control -->
+        <div class="flow-detail" id="detail-control">
+          <h4>🎯 Control Strategy Development</h4>
+          <div class="flow-detail-grid">
+            <div class="flow-detail-block">
+              <h5>Optimal Control (ECMS / PMP)</h5>
+              <ul>
+                <li>ECMS-based front/rear torque distribution for eAWD</li>
+                <li>Modified Hamiltonian-based EMS for EREV EV-like operation</li>
+                <li>Equivalence factor tuning for fuel economy optimization</li>
+                <li>Offline optimal benchmark via Dynamic Programming</li>
+              </ul>
+              <span class="tag">IEEE TTE (Submitted) · MOTIE eAWD</span>
+            </div>
+            <div class="flow-detail-block">
+              <h5>EREV System Control (Hyundai Project)</h5>
+              <ul>
+                <li>Model-based performance prediction for diverse EREV architectures</li>
+                <li>ECMS optimal control map derivation per system concept</li>
+                <li>System control logic development process</li>
+                <li>Maximum performance analysis with optimal control</li>
+              </ul>
+              <span class="tag">Hyundai Motor Company · 2025</span>
+            </div>
+            <div class="flow-detail-block">
+              <h5>Rule-Based Strategy</h5>
+              <ul>
+                <li>Heuristic control extraction via reverse engineering</li>
+                <li>Power-following vs. load-leveling comparison</li>
+                <li>Structure-specific rule development (4 architectures)</li>
+              </ul>
+              <span class="tag">KSAE 2025 · Tenergy Projects</span>
+            </div>
+            <div class="flow-detail-block">
+              <h5>Future Direction: AI-Based Control</h5>
+              <ul>
+                <li>Reinforcement Learning for adaptive EMS</li>
+                <li>Data-driven control strategy optimization</li>
+                <li>Bridging DP/PMP theory with RL agent design</li>
+              </ul>
+              <span class="tag">Ongoing Research</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DETAIL: Performance -->
+        <div class="flow-detail" id="detail-perf">
+          <h4>📊 Performance Analysis &amp; Validation</h4>
+          <div class="flow-detail-grid">
+            <div class="flow-detail-block">
+              <h5>Fuel Economy Evaluation</h5>
+              <ul>
+                <li>Structure-wise fuel economy comparison (rule-based benchmark)</li>
+                <li>Optimal control–based maximum performance analysis</li>
+                <li>Triple-motor HEV generalized representation &amp; optimization</li>
+              </ul>
+              <span class="tag">Fisita WMC 2025 · KSAE 2025</span>
+            </div>
+            <div class="flow-detail-block">
+              <h5>BEV Driving Range Prediction</h5>
+              <ul>
+                <li>Simulation framework with HVAC load estimation</li>
+                <li>Real-world driving data–based HVAC modeling</li>
+                <li>IONIQ5 driving range validation</li>
+              </ul>
+              <span class="tag">APAC 2024 · Ministry of Environment</span>
+            </div>
+            <div class="flow-detail-block">
+              <h5>Model Validation (NCCP-based)</h5>
+              <ul>
+                <li>Fuel economy, control accuracy, model performance metrics</li>
+                <li>Argonne benchmarking: CRV hybrid, Grand Cherokee</li>
+                <li>xEV test procedure development (BEV driving range III)</li>
+              </ul>
+              <span class="tag">NHTSA · Ministry of Environment</span>
+            </div>
+            <div class="flow-detail-block">
+              <h5>Energy-Optimal Speed Trajectory</h5>
+              <ul>
+                <li>BEV speed profile optimization via Dynamic Programming</li>
+                <li>Minimizing energy consumption on predefined routes</li>
+                <li>Fuel cell hybrid tram offline optimal EMS</li>
+              </ul>
+              <span class="tag">IEEE VPPC 2024 · APAC 2024</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="flow-sidebar">
+        <div class="sidebar-label">Controller<br>Development</div>
+        <div class="ctrl-badge rule" onclick="toggleFlow('control')">
+          📋 Rule-Based<br><span style="font-size:10px;font-weight:400;">Heuristic</span>
+        </div>
+        <div class="ctrl-badge optimal" onclick="toggleFlow('control')">
+          ⚡ Optimal<br><span style="font-size:10px;font-weight:400;">DP · PMP · ECMS</span>
+        </div>
+        <div class="ctrl-badge ai" onclick="toggleFlow('control')">
+          🤖 AI-Based<br><span style="font-size:10px;font-weight:400;">RL (Future)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION & EXPERIENCE -->
+<section id="education" class="sec-white">
   <div class="container">
     <div class="section-header">
       <div class="section-label">Education</div>
@@ -429,15 +585,15 @@
       </div>
       <div class="edu-item">
         <div>
-          <div class="edu-degree">B.S., Mechanical Engineering <em style="font-weight:400;font-size:13px;color:var(--text-light)">(with Honors)</em></div>
+          <div class="edu-degree">B.S., Mechanical Engineering <em style="font-weight:400;font-size:12.5px;color:var(--muted)">(with Honors)</em></div>
           <div class="edu-school">Hanyang University, South Korea</div>
           <span class="edu-gpa">GPA 4.21 / 4.5</span>
         </div>
         <div class="edu-period">Mar. 2017 – Feb. 2022</div>
       </div>
     </div>
-    <!-- Experience -->
-    <div class="section-header" style="margin-top:40px">
+
+    <div class="section-header" style="margin-top:36px;">
       <div class="section-label">Experience</div>
       <h2 class="section-title">Professional Experience</h2>
       <div class="divider"></div>
@@ -447,7 +603,7 @@
         <div>
           <div class="exp-title">Research Aide</div>
           <div class="exp-org">Argonne National Laboratory, United States</div>
-          <div class="exp-desc">Vehicle Technology Assessment · Model Development & Validation (NHTSA project)</div>
+          <div class="exp-desc">Vehicle Technology Assessment · Model Development &amp; Validation (NHTSA) · Benchmarking study: CRV, Grand Cherokee</div>
         </div>
         <div class="exp-period">Jan. 2026 – Present</div>
       </div>
@@ -455,57 +611,8 @@
   </div>
 </section>
 
-<!-- RESEARCH INTERESTS -->
-<section id="research">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-label">Research</div>
-      <h2 class="section-title">Research Interests</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="interest-grid">
-      <div class="interest-card">
-        <div class="interest-icon">🎯</div>
-        <div class="interest-title">Dynamics, Control & Optimization</div>
-        <ul class="interest-list">
-          <li>Optimal control (DP &amp; PMP)</li>
-          <li>Control and system optimization</li>
-          <li>Intelligent control via Reinforcement Learning</li>
-        </ul>
-      </div>
-      <div class="interest-card">
-        <div class="interest-icon">⚡</div>
-        <div class="interest-title">Advanced Powertrain Systems</div>
-        <ul class="interest-list">
-          <li>HEV / PHEV / BEV / FCEV modeling</li>
-          <li>Model validation &amp; control development</li>
-          <li>Energy management &amp; torque distribution</li>
-        </ul>
-      </div>
-      <div class="interest-card">
-        <div class="interest-icon">🤖</div>
-        <div class="interest-title">Machine Learning for Vehicles</div>
-        <ul class="interest-list">
-          <li>ML-based vehicle test data analysis</li>
-          <li>Data-driven EMS optimization</li>
-          <li>RL-based adaptive control strategies</li>
-        </ul>
-      </div>
-      <div class="interest-card">
-        <div class="interest-icon">🔬</div>
-        <div class="interest-title">Simulation & Verification</div>
-        <ul class="interest-list">
-          <li>Autonomie, Simscape, AVL Cruise M</li>
-          <li>Driving range prediction frameworks</li>
-          <li>Performance evaluation for xEVs</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- PROJECTS -->
-<section id="projects">
+<section id="projects" class="sec-tinted">
   <div class="container">
     <div class="section-header">
       <div class="section-label">Projects</div>
@@ -513,72 +620,46 @@
       <div class="divider"></div>
     </div>
     <div class="card">
-      <div style="margin-bottom:20px">
-        <div style="font-size:13px;font-weight:700;color:var(--text-light);text-transform:uppercase;letter-spacing:.8px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--border);">Ongoing</div>
-        <div class="project-item">
-          <div class="project-title">Vehicle Technology Assessment, Model Development, and Validation</div>
-          <div class="project-meta">
-            <span class="project-funder">National Highway Traffic Safety Administration (NHTSA)</span>
-            <span class="project-period">01.2026 – 12.2026</span>
-            <span class="badge-ongoing">Ongoing</span>
-          </div>
+      <div style="font-size:11.5px;font-weight:700;color:var(--orange-dark);text-transform:uppercase;letter-spacing:.8px;margin-bottom:14px;padding-bottom:7px;border-bottom:2px solid var(--orange-mid);">Ongoing</div>
+      <div class="project-item">
+        <div class="project-title">Vehicle Technology Assessment, Model Development, and Validation</div>
+        <div class="project-meta">
+          <span class="project-funder">NHTSA (Argonne National Laboratory)</span>
+          <span class="project-period">01.2026 – 12.2026</span>
+          <span class="badge-ongoing">Ongoing</span>
         </div>
       </div>
-      <div style="font-size:13px;font-weight:700;color:var(--text-light);text-transform:uppercase;letter-spacing:.8px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--border);">Recently Completed</div>
+      <div style="font-size:11.5px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin:20px 0 14px;padding-bottom:7px;border-bottom:2px solid var(--border);">Completed</div>
       <div class="project-item">
         <div class="project-title">Model and control development for evaluating fuel efficiency of Extended Range Electric Vehicle (EREV)</div>
-        <div class="project-meta">
-          <span class="project-funder">Hyundai Motor Company</span>
-          <span class="project-period">03.2025 – 11.2025</span>
-          <span class="badge-done">Completed</span>
-        </div>
+        <div class="project-meta"><span class="project-funder">Hyundai Motor Company</span><span class="project-period">03.2025 – 11.2025</span><span class="badge-done">Done</span></div>
       </div>
       <div class="project-item">
-        <div class="project-title">e-AWD Rear-wheel Mounted Electric Drive System for Medium &amp; Heavy-duty SUV Energy Efficiency</div>
-        <div class="project-meta">
-          <span class="project-funder">Ministry of Trade, Industry and Energy (Korea)</span>
-          <span class="project-period">05.2022 – 12.2025</span>
-          <span class="badge-done">Completed</span>
-        </div>
+        <div class="project-title">e-AWD Rear-wheel Mounted Electric Drive System for Medium &amp; Heavy-duty SUV (TMED2)</div>
+        <div class="project-meta"><span class="project-funder">Ministry of Trade, Industry and Energy</span><span class="project-period">05.2022 – 12.2025</span><span class="badge-done">Done</span></div>
       </div>
       <div class="project-item">
         <div class="project-title">Development of Buffer Functional Materials and Active Utilization System for Urban Climate Change</div>
-        <div class="project-meta">
-          <span class="project-funder">Ministry of Science and ICT</span>
-          <span class="project-period">05.2023 – 12.2026</span>
-          <span class="badge-done">Completed</span>
-        </div>
+        <div class="project-meta"><span class="project-funder">Ministry of Science and ICT</span><span class="project-period">05.2023 – 12.2026</span><span class="badge-done">Done</span></div>
       </div>
       <div class="project-item">
-        <div class="project-title">Development of simulation models for HEV/PHEV fuel economy and performance analysis</div>
-        <div class="project-meta">
-          <span class="project-funder">Tenergy</span>
-          <span class="project-period">03.2025 – 08.2025</span>
-          <span class="badge-done">Completed</span>
-        </div>
+        <div class="project-title">HEV/PHEV Fuel Economy &amp; Performance Simulation Model Development (4 architectures)</div>
+        <div class="project-meta"><span class="project-funder">Tenergy</span><span class="project-period">03.2025 – 08.2025</span><span class="badge-done">Done</span></div>
       </div>
       <div class="project-item">
-        <div class="project-title">Development of a performance evaluation process for xEVs</div>
-        <div class="project-meta">
-          <span class="project-funder">Tenergy</span>
-          <span class="project-period">03.2025 – 05.2025</span>
-          <span class="badge-done">Completed</span>
-        </div>
+        <div class="project-title">Performance Evaluation Process Development for xEVs</div>
+        <div class="project-meta"><span class="project-funder">Tenergy</span><span class="project-period">03.2025 – 05.2025</span><span class="badge-done">Done</span></div>
       </div>
       <div class="project-item">
         <div class="project-title">Test Procedure and Validation for Driving Ranges of Battery Electric Vehicles (II &amp; III)</div>
-        <div class="project-meta">
-          <span class="project-funder">Ministry of Environment (Korea)</span>
-          <span class="project-period">05.2022 – 01.2024</span>
-          <span class="badge-done">Completed</span>
-        </div>
+        <div class="project-meta"><span class="project-funder">Ministry of Environment</span><span class="project-period">05.2022 – 01.2024</span><span class="badge-done">Done</span></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PUBLICATIONS -->
-<section id="publications">
+<section id="publications" class="sec-white">
   <div class="container">
     <div class="section-header">
       <div class="section-label">Publications</div>
@@ -586,78 +667,58 @@
       <div class="divider"></div>
     </div>
     <div class="card">
-      <!-- International Journal -->
       <div class="pub-group-title">International Journal</div>
       <div class="pub-item">
-        <div class="pub-authors">
-          <strong>*Hyein Sung</strong>, Sungtak Hong, Inchan Lee, Dongeon Kim, and Namwook Kim.
-          "Modified Hamiltonian-based Energy Management for EV-like Operation of Extended-Range Electric Vehicles."
-          <span class="pub-badge submitted">Submitted</span>
-        </div>
+        <div class="pub-authors"><strong>*Hyein Sung</strong>, Sungtak Hong, Inchan Lee, Dongeon Kim, and Namwook Kim. "Modified Hamiltonian-based Energy Management for EV-like Operation of Extended-Range Electric Vehicles." <span class="pub-badge submitted">Submitted</span></div>
         <div class="pub-venue">IEEE Transactions on Transportation Electrification (IEEE TTE)</div>
       </div>
 
-      <!-- International Conference -->
       <div class="pub-group-title">International Conference</div>
       <div class="pub-item">
-        <div class="pub-authors">
-          <strong>*Hyein Sung</strong>, Hyunseok Yu, and Namwook Kim. (2025).
-          "Generalized Representation and Control Optimization of Triple-Motor Hybrid Electric Vehicles."
-        </div>
+        <div class="pub-authors"><strong>*Hyein Sung</strong>, Hyunseok Yu, and Namwook Kim. (2025). "Generalized Representation and Control Optimization of Triple-Motor Hybrid Electric Vehicles."</div>
         <div class="pub-venue">2025 Fisita World Mobility Conference (WMC)</div>
       </div>
       <div class="pub-item">
-        <div class="pub-authors">
-          <strong>*Hyein Sung</strong>, Jehwi Yeon, Yunsung Lim, Jeongwon Han, Juwon Kim and Namwook Kim. (2024).
-          "Simulation Framework for Predicting BEV Driving Range with Estimated HVAC Load from Driving Test Data."
-        </div>
+        <div class="pub-authors"><strong>*Hyein Sung</strong>, Jehwi Yeon, Yunsung Lim, Jeongwon Han, Juwon Kim and Namwook Kim. (2024). "Simulation Framework for Predicting BEV Driving Range with Estimated HVAC Load from Driving Test Data."</div>
         <div class="pub-venue">2024 Asia Pacific Automotive Engineering Conference (APAC)</div>
       </div>
       <div class="pub-item">
-        <div class="pub-authors">
-          Dongeon Kim, Jehwi Yeon, <strong>Hyein Sung</strong> and Namwook Kim. (2024).
-          "Optimal Offline Energy Management Strategy for Fuel Cell Hybrid Trams on Predefined Path."
-        </div>
+        <div class="pub-authors">Dongeon Kim, Jehwi Yeon, <strong>Hyein Sung</strong> and Namwook Kim. (2024). "Optimal Offline Energy Management Strategy for Fuel Cell Hybrid Trams on Predefined Path."</div>
         <div class="pub-venue">2024 Asia Pacific Automotive Engineering Conference (APAC)</div>
       </div>
       <div class="pub-item">
-        <div class="pub-authors">
-          Sungtak Hong, <strong>Hyein Sung</strong>, Jehwi Yeon, Dongeon Kim, Jaekwang Jung and Namwook Kim. (2024).
-          "Minimizing the Energy Consumption of BEV Speed Trajectory Based on Dynamic Programming."
-        </div>
+        <div class="pub-authors">Sungtak Hong, <strong>Hyein Sung</strong>, Jehwi Yeon, Dongeon Kim, Jaekwang Jung and Namwook Kim. (2024). "Minimizing the Energy Consumption of BEV Speed Trajectory Based on Dynamic Programming."</div>
         <div class="pub-venue">2024 IEEE Vehicle Power and Propulsion Conference (VPPC)</div>
       </div>
 
-      <!-- Domestic -->
-      <div class="pub-group-title">Domestic Journal &amp; Conference (Korea)</div>
+      <div class="pub-group-title">Domestic Journal &amp; Conference — Korea (1st Author)</div>
       <div class="pub-item">
-        <div class="pub-authors">
-          <strong>*Hyein Sung</strong>, Wonjun Kim, Hanjun Ryu, Byungsoon Min, Liyue Yang and Namwook Kim. (2025).
-          "Impact of Control Strategies on Fuel Economy in Plug-in Hybrid Vehicle."
-        </div>
-        <div class="pub-venue">KSAE 2025 Annual Autumn Conference &amp; Exhibition</div>
+        <div class="pub-authors"><strong>*Hyein Sung</strong> et al. (2025). "Impact of Control Strategies on Fuel Economy in Plug-in Hybrid Vehicle (Power Following vs. Load Leveling)."</div>
+        <div class="pub-venue">KSAE 2025 Annual Autumn Conference</div>
       </div>
       <div class="pub-item">
-        <div class="pub-authors">
-          <strong>*Hyein Sung</strong> et al. (2025).
-          "Control Strategy Analysis and Simulation Model Development of the Honda Multi-Mode Hybrid System."
-        </div>
+        <div class="pub-authors"><strong>*Hyein Sung</strong> et al. (2025). "Control Strategy Analysis and Simulation Model Development of the Honda Multi-Mode Hybrid System Using Driving Test Data."</div>
         <div class="pub-venue">KSAE 2025 Annual Spring Conference</div>
       </div>
       <div class="pub-item">
-        <div class="pub-authors">
-          J. Yeon, D. Park, Y. Lee, <strong>H. Sung</strong>, Y. Lim, J. Lee, N. Kim. (2023).
-          "Prediction of Driving Range of Electric Vehicle Based on Simulation: Focusing on the IONIQ5."
-        </div>
-        <div class="pub-venue">Transactions of KSAE, 31(4), 275–282</div>
+        <div class="pub-authors"><strong>*Hyein Sung</strong> et al. (2024). "Development and Validation of a Simulation Framework for Predicting EV Driving Range."</div>
+        <div class="pub-venue">KSAE 2024 Annual Autumn Conference</div>
       </div>
-      <div style="font-size:12px;color:var(--text-light);margin-top:12px;">* First / corresponding author</div>
+      <div class="pub-item">
+        <div class="pub-authors"><strong>*Hyein Sung</strong>, Jaekwang Jung, Gunhee Han and Namwook Kim. (2024). "Development of operating control strategies for rear-wheel-drive electric motors based on ECMS."</div>
+        <div class="pub-venue">KSAE 2024 Annual Spring Conference</div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-authors"><strong>*Hyein Sung</strong>, Jaekwang Jung, Jehwi Yeon and Namwook Kim. (2023). "Development of Electrified Powertrains Based on a Performance Analysis Tool with Optimal Control Theories."</div>
+        <div class="pub-venue">KSAE 2023 Annual Spring Conference</div>
+      </div>
+      <div style="font-size:12px;color:var(--muted);margin-top:10px;">* First / presenting author &nbsp;|&nbsp; Additional co-authored papers not listed</div>
     </div>
   </div>
 </section>
 
 <!-- SKILLS -->
-<section id="skills" style="padding-bottom:64px">
+<section id="skills" class="sec-tinted" style="padding-bottom:60px">
   <div class="container">
     <div class="section-header">
       <div class="section-label">Skills</div>
@@ -668,32 +729,32 @@
       <div class="skill-card">
         <div class="skill-icon">🔧</div>
         <div class="skill-name">MATLAB / Simulink</div>
-        <div class="skill-desc">Expert-level modeling, Stateflow logic, control algorithm implementation</div>
+        <div class="skill-desc">Expert — control algorithm, Stateflow logic, Simscape Driveline</div>
       </div>
       <div class="skill-card">
         <div class="skill-icon">🚗</div>
         <div class="skill-name">Autonomie</div>
-        <div class="skill-desc">Proficient in vehicle system simulation & powertrain analysis</div>
+        <div class="skill-desc">Proficient — vehicle system simulation &amp; powertrain analysis</div>
       </div>
       <div class="skill-card">
         <div class="skill-icon">📊</div>
         <div class="skill-name">AVL Cruise M</div>
-        <div class="skill-desc">Proficient in advanced vehicle modeling & validation</div>
+        <div class="skill-desc">Proficient — advanced vehicle modeling &amp; validation</div>
       </div>
       <div class="skill-card">
-        <div class="skill-icon">🧠</div>
+        <div class="skill-icon">🧮</div>
         <div class="skill-name">Optimal Control</div>
-        <div class="skill-desc">Dynamic Programming, Pontryagin's Minimum Principle, ECMS</div>
+        <div class="skill-desc">Dynamic Programming · PMP · ECMS · Hamiltonian-based EMS</div>
       </div>
       <div class="skill-card">
         <div class="skill-icon">🤖</div>
         <div class="skill-name">Machine Learning / RL</div>
-        <div class="skill-desc">Reinforcement Learning for intelligent EMS, data-driven control</div>
+        <div class="skill-desc">Reinforcement Learning for intelligent EMS · data-driven control</div>
       </div>
       <div class="skill-card">
-        <div class="skill-icon">⚙️</div>
-        <div class="skill-name">Simscape Driveline</div>
-        <div class="skill-desc">Physical modeling of drivetrain systems and components</div>
+        <div class="skill-icon">🔬</div>
+        <div class="skill-name">Reverse Engineering</div>
+        <div class="skill-desc">Control strategy &amp; parameter extraction from vehicle test data</div>
       </div>
     </div>
   </div>
@@ -709,50 +770,28 @@
     </div>
     <div class="contact-grid">
       <div class="contact-item">
-        <div class="contact-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
-        </div>
-        <div>
-          <div class="contact-label">Email</div>
-          <div class="contact-value"><a href="mailto:hisung318@gmail.com">hisung318@gmail.com</a></div>
-        </div>
+        <div class="contact-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg></div>
+        <div><div class="contact-label">Email</div><div class="contact-value"><a href="mailto:hisung318@gmail.com">hisung318@gmail.com</a></div></div>
       </div>
       <div class="contact-item">
-        <div class="contact-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.08 3.41 2 2 0 0 1 3.06 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16v.92z"/></svg>
-        </div>
-        <div>
-          <div class="contact-label">Phone (Korea)</div>
-          <div class="contact-value">+82-10-9152-5329</div>
-        </div>
+        <div class="contact-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.08 3.41 2 2 0 0 1 3.06 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16v.92z"/></svg></div>
+        <div><div class="contact-label">Phone (Korea)</div><div class="contact-value">+82-10-9152-5329</div></div>
       </div>
       <div class="contact-item">
-        <div class="contact-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.08 3.41 2 2 0 0 1 3.06 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16v.92z"/></svg>
-        </div>
-        <div>
-          <div class="contact-label">Phone (US)</div>
-          <div class="contact-value">+1 630-201-4760</div>
-        </div>
+        <div class="contact-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.08 3.41 2 2 0 0 1 3.06 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16v.92z"/></svg></div>
+        <div><div class="contact-label">Phone (US)</div><div class="contact-value">+1 630-201-4760</div></div>
       </div>
       <div class="contact-item">
-        <div class="contact-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-        </div>
-        <div>
-          <div class="contact-label">Website</div>
-          <div class="contact-value"><a href="https://sites.google.com/view/mdlhyu" target="_blank">sites.google.com/view/mdlhyu</a></div>
-        </div>
+        <div class="contact-icon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+        <div><div class="contact-label">Website</div><div class="contact-value"><a href="https://sites.google.com/view/mdlhyu" target="_blank">sites.google.com/view/mdlhyu</a></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<footer>
-  <p>© 2026 Hyein Sung · Hanyang University, School of Mechanical Engineering</p>
-</footer>
+<footer>© 2026 Hyein Sung · Hanyang University, School of Mechanical Engineering</footer>
 
-<!-- ADMIN OVERLAY -->
+<!-- ADMIN -->
 <div id="admin-overlay">
   <div class="admin-panel">
     <h2>🔒 Admin Access</h2>
@@ -763,98 +802,73 @@
     <button class="btn-cancel" onclick="closeAdmin()">Cancel</button>
   </div>
 </div>
-
-<!-- EDIT MODE INDICATOR -->
 <div id="edit-indicator">
   ✏️ Edit Mode Active
   <span class="logout-link" onclick="exitEditMode()">Exit</span>
 </div>
 
 <script>
-  // ===== CONFIG — change this password before publishing =====
-  const ADMIN_PASSWORD = "mdl2024!";
+  const ADMIN_PASSWORD = "mdl2024!"; // ← 배포 전 변경하세요
 
-  // ===== ADMIN =====
-  function openAdmin() {
-    document.getElementById('admin-overlay').classList.add('show');
-    setTimeout(() => document.getElementById('admin-pw').focus(), 100);
-  }
-  function closeAdmin() {
-    document.getElementById('admin-overlay').classList.remove('show');
-    document.getElementById('admin-pw').value = '';
-    document.getElementById('admin-error').style.display = 'none';
-  }
+  function openAdmin()  { document.getElementById('admin-overlay').classList.add('show'); setTimeout(()=>document.getElementById('admin-pw').focus(),100); }
+  function closeAdmin() { document.getElementById('admin-overlay').classList.remove('show'); document.getElementById('admin-pw').value=''; document.getElementById('admin-error').style.display='none'; }
   function checkAdmin() {
-    const pw = document.getElementById('admin-pw').value;
-    if (pw === ADMIN_PASSWORD) {
-      closeAdmin();
-      enterEditMode();
-    } else {
-      document.getElementById('admin-error').style.display = 'block';
-      document.getElementById('admin-pw').value = '';
-      document.getElementById('admin-pw').focus();
-    }
+    if (document.getElementById('admin-pw').value === ADMIN_PASSWORD) { closeAdmin(); enterEditMode(); }
+    else { document.getElementById('admin-error').style.display='block'; document.getElementById('admin-pw').value=''; document.getElementById('admin-pw').focus(); }
   }
-
-  // ===== EDIT MODE =====
   function enterEditMode() {
     document.body.classList.add('edit-mode');
     document.getElementById('edit-indicator').classList.add('show');
-    document.querySelectorAll('.editable').forEach(el => {
-      el.contentEditable = 'true';
-    });
+    document.querySelectorAll('.editable').forEach(el => el.contentEditable='true');
   }
   function exitEditMode() {
     document.body.classList.remove('edit-mode');
     document.getElementById('edit-indicator').classList.remove('show');
-    document.querySelectorAll('.editable').forEach(el => {
-      el.contentEditable = 'false';
-    });
+    document.querySelectorAll('.editable').forEach(el => el.contentEditable='false');
   }
 
-  // ===== PHOTO UPLOAD (edit mode) =====
+  // Stats → section scroll
+  function scrollTo(id) {
+    const el = document.querySelector(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Research flow toggle
+  const nodes = ['modeling','control','perf'];
+  function toggleFlow(id) {
+    const detail = document.getElementById('detail-'+id);
+    const node   = document.getElementById('node-'+id);
+    const isOpen = detail.classList.contains('show');
+    nodes.forEach(n => {
+      document.getElementById('detail-'+n).classList.remove('show');
+      document.getElementById('node-'+n).classList.remove('active');
+    });
+    if (!isOpen) { detail.classList.add('show'); node.classList.add('active'); detail.scrollIntoView({behavior:'smooth',block:'nearest'}); }
+  }
+
+  // Photo upload (edit mode only)
   document.getElementById('photo-wrap').addEventListener('click', function() {
     if (!document.body.classList.contains('edit-mode')) return;
-    const input = document.createElement('input');
-    input.type = 'file'; input.accept = 'image/*';
-    input.onchange = (e) => {
-      const file = e.target.files[0]; if (!file) return;
+    const input = document.createElement('input'); input.type='file'; input.accept='image/*';
+    input.onchange = e => {
+      const file = e.target.files[0]; if(!file) return;
       const reader = new FileReader();
-      reader.onload = (r) => {
-        this.innerHTML = `<img src="${r.result}" alt="Profile photo" />`;
-      };
+      reader.onload = r => { this.innerHTML=`<img src="${r.result}" alt="Profile"/>`; };
       reader.readAsDataURL(file);
     };
     input.click();
   });
-  // Show cursor hint in edit mode
-  document.getElementById('photo-wrap').addEventListener('mouseenter', function() {
-    if (document.body.classList.contains('edit-mode')) {
-      this.style.cursor = 'pointer';
-      this.style.opacity = '0.85';
-    }
-  });
-  document.getElementById('photo-wrap').addEventListener('mouseleave', function() {
-    this.style.cursor = ''; this.style.opacity = '';
-  });
 
-  // ===== ACTIVE NAV =====
+  // Active nav highlight
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('nav .links a');
+  const navLinks  = document.querySelectorAll('nav .links a');
   window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(sec => {
-      if (window.scrollY >= sec.offsetTop - 80) current = sec.id;
-    });
-    navLinks.forEach(a => {
-      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-    });
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 70) cur = s.id; });
+    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href')==='#'+cur));
   });
 
-  // Close overlay on background click
-  document.getElementById('admin-overlay').addEventListener('click', function(e) {
-    if (e.target === this) closeAdmin();
-  });
+  document.getElementById('admin-overlay').addEventListener('click', e => { if(e.target===document.getElementById('admin-overlay'))closeAdmin(); });
 </script>
 </body>
 </html>
